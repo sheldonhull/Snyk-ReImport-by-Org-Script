@@ -2,7 +2,7 @@ import requests
 import sys
 import time 
 
-SNYK_TOKEN = 'bfb65030-ed70-4515-a7a4-7b83deb286ac'
+SNYK_TOKEN = '[YOUR SNYK TOKEN]'
 
 dry_run = False
 if '--dry-run' in set(sys.argv):
