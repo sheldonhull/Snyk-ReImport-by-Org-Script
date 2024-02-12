@@ -1,7 +1,8 @@
 import requests
 import sys
+import time 
 
-SNYK_TOKEN = ''
+SNYK_TOKEN = 'bfb65030-ed70-4515-a7a4-7b83deb286ac'
 
 dry_run = False
 if '--dry-run' in set(sys.argv):
@@ -109,7 +110,6 @@ for org in orgs:
     if val == 'q':
         exit()
     if val == 's':
-        print (org_id)
         continue
 
     integration_id = get_integration_id(org_id)
@@ -121,5 +121,6 @@ for org in orgs:
         if not dry_run:
             res = import_repo(org_id, integration_id, repo)
             print(res.status_code)
+            time.sleep(5)
     
     print('')
